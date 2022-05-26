@@ -1,5 +1,5 @@
 {
-  "name": "goit-js-hw-08",
+  "name": "parcel-project-template",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -26,6 +26,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "@vimeo/player": "^2.16.4",
     "simplelightbox": "^2.10.3"
   }
 }
