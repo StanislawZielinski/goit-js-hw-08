@@ -2,7 +2,7 @@ const form = document.querySelector(".feedback-form");
 const LOCALSTORAGE_KEY = "feedback-form-state";
 const _= require('lodash');
 
-form.addEventListener("input", saveText);
+form.addEventListener("input",_.throttle(saveText,500));
 function saveText(event) {
     event.preventDefault();
     const saveEmail = form.elements.email.value;
@@ -35,22 +35,3 @@ function send_Clear(event) {
     form.reset();
     localStorage.removeItem(LOCALSTORAGE_KEY);
 };
-
-// let savedMessage;
-// message.addEventListener("input", saveMessage);
-// function saveMessage(event) {
-//     event.preventDefault();
-//     const savedMessage = message.value;
-//     console.log(savedMessage);
-//     return savedMessage;
-// };
-
-// const data = {
-//     email: `${savedEmail}`,
-//     message: `${savedMessage}`,    
-// };
-// localStorage.setItem("feedback-form-state", JSON.stringify(data));
-// const savedData = localStorage.getItem("feedback-form-state");
-// const parseSavedData = JSON.parse(savedData);
-// console.log(parseSavedData);
-
